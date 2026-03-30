@@ -31,11 +31,13 @@ def decrypt(text, shift):
 def main():
     while True:
         print('\nCaesar Cipher Menu')
+        print('------------------')
         print('1. Encryption')
         print('2. Decryption')
         print('3. Exit')
+        print('------------------')
 
-        choice = input('Choose an option (1/2/3): ').strip()
+        choice = input('Choose an option [1][2][3]: ').strip()
 
         if choice == '3':
             print('Goodbye!')
@@ -65,10 +67,16 @@ def main():
         try:
             if choice == '1':
                 result = encrypt(text, shift)
-                print(f'Encrypted: {result}')
+                print('\nEncryption')
+                print(f'Plaintext: {text}')
+                print(f'Shift key: {shift}')
+                print(f'Encrypted text: {result}')
             else:
                 result = decrypt(text, shift)
-                print(f'Decrypted: {result}')
+                print('\nDecryption')
+                print(f'Ciphertext: {text}')
+                print(f'Shift key: {shift}')
+                print(f'Decrypted text: {result}')
         except Exception as err:
             print(f'An error occurred: {err}. Please try again.')
 
